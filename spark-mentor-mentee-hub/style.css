@@ -1,0 +1,479 @@
+/* =============================================================
+   Spark Mentor-Mentee Hub – shared styles
+   Used by template-page1.php and template-page2.php
+   ============================================================= */
+
+/* ── Brand tokens ── */
+:root {
+  --spark-primary:   #4505E2;
+  --spark-secondary: #F2960F;
+  --spark-tertiary:  #14075B;
+  --spark-gray:      #53565B;
+  --spark-border:    #d8d8d8;
+  --spark-bg:        #f9f9f9;
+
+  /* Page 2 tokens (kept consistent) */
+  --sp2-navy:        #1a1a2e;
+  --sp2-blue:        #4a90d9;
+  --sp2-border:      #ddd;
+  --sp2-bg:          #f5f6fa;
+}
+
+/* ── Shared page wrapper ── */
+.smh-page {
+  background: var(--spark-bg);
+}
+
+.smh-page__inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 32px 24px 80px;
+}
+
+/* ── Section heading (page 2 style, used on both pages) ── */
+.smh-section-title {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: var(--sp2-navy);
+  margin-bottom: 20px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid var(--spark-border);
+}
+
+/* ── Widget card ── */
+.smh-card {
+  background: #fff;
+  border: 1px solid var(--sp2-border);
+  border-radius: 8px;
+  padding: 28px 32px;
+  margin-bottom: 24px;
+}
+
+.smh-card__title {
+  text-align: center;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--sp2-navy);
+  margin-bottom: 24px;
+}
+
+/* ── Placeholder text ── */
+.smh-placeholder {
+  color: #aaa;
+  font-style: italic;
+  font-size: 0.875rem;
+}
+
+/* =============================================================
+   PAGE 1 – Dashboard layout
+   ============================================================= */
+
+.smh-rows {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.smh-row {
+  display: grid;
+  gap: 24px;
+}
+
+.smh-row--top    { grid-template-columns: 1fr 2fr; }
+.smh-row--bottom { grid-template-columns: 2fr 1fr; }
+
+/* Widget title (page 1) */
+.smh-widget__title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--spark-tertiary);
+  text-align: center;
+  margin: 0 0 20px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--spark-border);
+}
+
+/* Form embed placeholder */
+.smh-form-embed {
+  min-height: 260px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Progress Report */
+.smh-progress__body {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.smh-progress__stats {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.smh-stat {
+  background: #f2f2f2;
+  border-radius: 4px;
+  padding: 8px 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.85rem;
+}
+
+.smh-stat__label { color: var(--spark-gray); }
+
+.smh-stat__value {
+  font-weight: 600;
+  color: var(--spark-tertiary);
+  white-space: nowrap;
+}
+
+/* Topics Covered */
+.smh-topics__heading {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--spark-gray);
+  margin: 0 0 12px;
+}
+
+.smh-topics__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 8px 12px;
+}
+
+.smh-topic {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.8rem;
+  color: var(--spark-gray);
+  cursor: default;
+}
+
+.smh-topic input[type="checkbox"] {
+  accent-color: var(--spark-primary);
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
+}
+
+/* Upcoming Events */
+.smh-events__list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.smh-event {
+  border: 1px solid var(--spark-border);
+  border-radius: 4px;
+  padding: 10px 14px;
+}
+
+.smh-event__meta {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--spark-gray);
+  margin-bottom: 4px;
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.smh-event__sep { color: var(--spark-border); }
+
+.smh-event__desc {
+  font-size: 0.8rem;
+  color: #888;
+  margin: 0;
+}
+
+/* Quick Links */
+.smh-links__list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.smh-link-btn {
+  display: block;
+  padding: 12px 16px;
+  background: #fff;
+  border: 2px solid var(--spark-secondary);
+  border-radius: 4px;
+  color: var(--spark-gray);
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-align: center;
+  text-decoration: none;
+  transition: background 0.2s, color 0.2s;
+}
+
+.smh-link-btn:hover,
+.smh-link-btn:focus {
+  background: var(--spark-secondary);
+  color: #fff;
+  text-decoration: none;
+}
+
+/* =============================================================
+   PAGE 2 – Notes & College Tracker layout
+   ============================================================= */
+
+.smh-section { margin-bottom: 60px; }
+
+/* Notes grid */
+.smh-notes-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.smh-note-card {
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  padding: 16px;
+  min-height: 160px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  position: relative;
+}
+
+.smh-note-card.is-editing {
+  border-color: var(--sp2-blue);
+  box-shadow: 0 0 0 2px rgba(74, 144, 217, 0.2);
+}
+
+.smh-note-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.smh-note-date-label {
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #555;
+}
+
+.smh-note-date-input {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #333;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 2px 6px;
+  font-family: inherit;
+}
+
+.smh-note-actions { display: flex; gap: 6px; flex-shrink: 0; }
+
+.smh-btn-icon {
+  background: none;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  cursor: pointer;
+  padding: 3px 7px;
+  font-size: 0.75rem;
+  color: #555;
+  transition: background 0.15s, color 0.15s;
+}
+
+.smh-btn-icon:hover               { background: #f0f0f0; color: var(--sp2-navy); }
+.smh-btn-icon.danger:hover        { background: #fdecea; border-color: #e57373; color: #c62828; }
+.smh-btn-icon.save                { border-color: var(--sp2-blue); color: var(--sp2-blue); }
+.smh-btn-icon.save:hover          { background: var(--sp2-blue); color: #fff; }
+
+.smh-note-text {
+  font-size: 0.88rem;
+  color: #333;
+  line-height: 1.55;
+  flex: 1;
+  white-space: pre-wrap;
+}
+
+.smh-note-textarea {
+  font-size: 0.88rem;
+  color: #333;
+  line-height: 1.55;
+  flex: 1;
+  width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 6px 8px;
+  font-family: inherit;
+  resize: vertical;
+  min-height: 90px;
+}
+
+.smh-add-note-btn {
+  margin-top: 20px;
+  width: 100%;
+  padding: 10px;
+  background: #fff;
+  border: 2px dashed #ccc;
+  border-radius: 6px;
+  font-size: 0.88rem;
+  color: #555;
+  cursor: pointer;
+  transition: border-color 0.2s, color 0.2s;
+}
+
+.smh-add-note-btn:hover { border-color: var(--sp2-blue); color: var(--sp2-blue); }
+
+/* College Tracker */
+.smh-college-tracker {
+  display: grid;
+  grid-template-columns: 280px 1fr 1fr;
+  gap: 20px;
+  align-items: start;
+}
+
+.smh-update-form {
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  padding: 20px;
+}
+
+.smh-update-form h3 {
+  font-size: 0.95rem;
+  font-weight: 700;
+  margin-bottom: 16px;
+  text-align: center;
+}
+
+.smh-form-field { margin-bottom: 14px; }
+
+.smh-form-field label {
+  display: block;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #555;
+  margin-bottom: 4px;
+}
+
+.smh-form-field input[type="text"],
+.smh-form-field textarea {
+  width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 6px 8px;
+  font-size: 0.82rem;
+  font-family: inherit;
+  color: #333;
+  background: #fff;
+}
+
+.smh-form-field textarea { min-height: 72px; resize: vertical; }
+
+.smh-radio-groups  { display: flex; gap: 20px; margin-top: 4px; }
+.smh-radio-group label { font-size: 0.78rem; font-weight: 700; color: #444; margin-bottom: 4px; display: block; }
+
+.smh-radio-option {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.78rem;
+  color: #333;
+  margin-bottom: 2px;
+}
+
+.smh-radio-option input { margin: 0; cursor: pointer; }
+
+.smh-submit-btn {
+  width: 100%;
+  margin-top: 14px;
+  padding: 8px;
+  background: var(--sp2-navy);
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.smh-submit-btn:hover { background: #2d2d50; }
+
+.smh-semester {
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  padding: 20px;
+}
+
+.smh-semester h3 {
+  font-size: 0.95rem;
+  font-weight: 700;
+  margin-bottom: 14px;
+}
+
+.smh-checklist {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.smh-checklist li {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  font-size: 0.84rem;
+  color: #333;
+  line-height: 1.4;
+}
+
+.smh-checklist li input[type="checkbox"] {
+  margin-top: 2px;
+  flex-shrink: 0;
+  cursor: pointer;
+  width: 14px;
+  height: 14px;
+}
+
+/* Toast */
+.smh-toast {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  background: var(--sp2-navy);
+  color: #fff;
+  padding: 10px 18px;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s;
+  z-index: 9999;
+}
+
+.smh-toast.show { opacity: 1; }
+
+/* =============================================================
+   Responsive
+   ============================================================= */
+@media (max-width: 900px) {
+  .smh-row--top,
+  .smh-row--bottom { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 800px) {
+  .smh-notes-grid       { grid-template-columns: 1fr; }
+  .smh-college-tracker  { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 600px) {
+  .smh-progress__body   { grid-template-columns: 1fr; }
+  .smh-topics__grid     { grid-template-columns: 1fr 1fr; }
+}
