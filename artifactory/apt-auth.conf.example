@@ -1,0 +1,3 @@
+machine artifactory.cloud.capitalone.com
+login <$eid>
+password <$ARTIFACTORY_IDENTITY_TOKEN>
